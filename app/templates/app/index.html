@@ -1,0 +1,164 @@
+{%extends 'app/base.html'%}{%block content%}{%load static%}
+<section id="welcome" class="panel">
+    <i id="welcome-x-shape" class="fas fa-times"></i>
+    <i id="welcome-box-shape" class="fas fa-square"></i>
+    <a
+        href="https://open.spotify.com/user/alifyandraid?si=kgwTTC1NRtGQhPJNboGPPg"
+        target="blank"
+        ><i id="welcome-spotify-shape" class="fab fa-spotify"></i
+    ></a>
+    <a href="https://www.instagram.com/alifyandra" target="blank">
+        <i id="welcome-ig-shape" class="fab fa-instagram"></i
+    ></a>
+    <a onclick="switchFace()">
+        <img
+            src="{% static 'app/images/IMG_1610_border.png' %}"
+            style="
+                max-height: 100%;
+                max-width: 10vmax;
+                margin-top: 18vh;
+                margin-left: -25vw;
+                position: absolute;
+                transform: rotate(-15deg);
+            "
+    /></a>
+    <div class="vertical-center">
+        <div class="container">
+            <div class="welcome wordCarousel">
+                <div>
+                    <ul class="flip2">
+                        <li>Click the button</li>
+                        <li>Welcome</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center">
+                <a href="#about"
+                    ><i
+                        id="welcome-down-shape"
+                        class="far fa-arrow-alt-circle-down"
+                        style="color: #ff8427; font-size: 220%"
+                    ></i
+                ></a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="about" class="panel">
+    <i id="about-circle-shape" class="fas fa-circle"></i>
+    <i id="about-circle-shape2" class="fas fa-circle"></i>
+    <div class="vertical-center">
+        <div class="container">
+            <h2 id="about-title">
+                About
+                <span style="transform: rotate(8deg); display: inline-block">
+                    me</span
+                >!
+            </h2>
+            <div class="about-p" style="transform: rotate(1deg)">
+                <span style="background-color: #c5faa5"
+                    >Hi! I'm a
+                    <span style="color: #ef476f"><u>Computer Science</u></span>
+                    sophomore at Universitas Indonesia.</span
+                >
+            </div>
+            <div class="about-p" style="transform: rotate(-1deg)">
+                <span style="background-color: #c5faa5"
+                    >I currently possess skills for
+                    <span style="color: #ef476f"><u>Python</u></span
+                    >, <span style="color: #ef476f"><u>Java</u></span
+                    >, <span style="color: #ef476f"><u>Shell Scripting</u></span
+                    >, <span style="color: #ef476f"><u>a bit of SQL</u></span
+                    >, & <span style="color: #ef476f"><u>Django</u></span> Web
+                    Development. (psst, like this website)</span
+                >
+            </div>
+            <div class="about-p" style="transform: rotate(1deg)">
+                <span style="background-color: #c5faa5"
+                    >In my final semesters i'll be taking my CS double degree in
+                    <span style="color: #ef476f"><u>UQ</u></span>
+                    Australia.
+                </span>
+            </div>
+            <div class="about-p" style="transform: rotate(-1deg)">
+                <span style="background-color: #c5faa5"
+                    >I have a wide taste in
+                    <span style="color: #ef476f"><u>music</u></span> and follow
+                    different types of genres, follow my
+                    <a
+                        href="https://open.spotify.com/user/alifyandraid?si=kgwTTC1NRtGQhPJNboGPPg"
+                        target="blank"
+                        style="color: #ef476f"
+                        ><u>Spotify</u></a
+                    >
+                    here!
+                </span>
+            </div>
+            <div class="about-p" style="transform: rotate(1deg)">
+                <span style="background-color: #c5faa5"
+                    >For more info about my
+                    <a
+                        class="jumpylink"
+                        style="color: #ef476f"
+                        href="https://www.linkedin.com/in/ahmad-izzudin-alifyandra-55b4421a1"
+                        target="blank"
+                        ><u>skills and experiences</u></a
+                    >, check out my linkedin in the contact page down below!
+                </span>
+            </div>
+            <div style="text-align: center">
+                <br />
+                <a href="#contact"
+                    ><i
+                        id="welcome-down-shape"
+                        class="far fa-arrow-alt-circle-down"
+                        style="color: #ef476f; font-size: 220%"
+                    ></i
+                ></a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- <section id="projects" class="panel">
+    <div class="vertical-center">
+        <div class="container">
+            <h2 style="font-family: Rubik, sans-serif; font-weight: 400">
+                Projects
+            </h2>
+        </div>
+    </div>
+</section> -->
+<section id="contact" class="panel">
+    <i id="contact-box-shape" class="fas fa-square"></i>
+    <i id="contact-cross-shape" class="fas fa-times"></i>
+    <div class="vertical-center">
+        <div class="container">
+            <h2 id="contact-title">Contact</h2>
+            <div class="row" style="padding-top: 2vh">
+                <div class="col-lg-6">
+                    <a
+                        href="mailto:alifyandra@gmail.com"
+                        target="_blank"
+                        class="contact-link"
+                        ><span style="background-color: #c5faa5"> email </span>
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <a
+                        href="https://www.linkedin.com/in/ahmad-izzudin-alifyandra-55b4421a1"
+                        target="blank"
+                        class="contact-link"
+                    >
+                        <span style="background-color: #c5faa5">
+                            linkedin
+                        </span></a
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="footer" class="panel">
+    <div class="container">Ahmad Izzudin Alifyandra © 2020</div>
+</section>
+{%endblock content%}

@@ -1,0 +1,216 @@
+{% load static %} {% load sass_tags %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-172126276-1"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+
+            gtag("config", "UA-172126276-1");
+        </script>
+        <!-- Meta Tags-->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- CSS Files-->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{% static 'app/css/bootstrap.min.css' %}"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{% static 'app/css/styles.css' %}"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{% sass_src 'app/css/welcome.scss' %}"
+        />
+
+        <!-- external sources -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,700;1,400&Roboto:wght@400;700&family=Open+Sans&family=Rubik:wght@200;300;400;500;900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+            integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+            crossorigin="anonymous"
+        />
+        <meta
+            name="image"
+            property="og:image"
+            content="{% static 'app/images/preview.png' %}"
+        />
+        <meta name="author" content="Ahmad Izzudin Alifyandra" />
+
+        <link rel="icon" href="{% static 'app/images/favicon.ico' %}" />
+        <script
+            src="https://kit.fontawesome.com/1f06dfeacc.js"
+            crossorigin="anonymous"
+        ></script>
+
+        <!-- title djtag -->
+        {% if title %}
+        <title>{{ title }}</title>
+        {% else %}
+        <title>Story 10</title>
+        {% endif %}
+    </head>
+    <body data-spy="scroll" data-target="#main-nav" data-offset="10">
+        <nav id="main-nav" class="navbar navbar-expand-sm fixed-top">
+            <a class="navbar-brand" href="#">Ahmad I. Alifyandra</a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <i
+                    class="fas fa-bars"
+                    style="font-size: 100%; color: #c5faa5"
+                ></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#welcome"
+                            style="transform: rotate(-2deg)"
+                            >Home <span class="sr-only">(current)</span></a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#about"
+                            style="color: #bcb6ff; transform: rotate(2deg)"
+                            >About</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="#contact"
+                            style="color: #ef476f; transform: rotate(-2deg)"
+                            >Contact</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        {% block content %} {% endblock content %}
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+    <script src="{% static 'app/scripts/main.js' %}"></script>
+    <!-- Close collapse navbar onclick -->
+    <script>
+        $(".navbar-nav>li>a").on("click", function () {
+            if (this.id != "navbarDropdownMenuLink") {
+                $(".navbar-collapse").collapse("hide");
+            }
+        });
+        $(".navbar-nav>li>div>a").on("click", function () {
+            $(".navbar-collapse").collapse("hide");
+        });
+    </script>
+    <!-- Scroll animation -->
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on("click", function (event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $("html, body").animate(
+                        {
+                            scrollTop: $(hash).offset().top,
+                        },
+                        800,
+                        function () {
+                            // Add hash (#) to URL when done scrolling (default click behavior)
+                            window.location.hash = hash;
+                        }
+                    );
+                } // End if
+            });
+        });
+    </script>
+    <!-- Color changing scroll animation -->
+    <script>
+        $(window).scroll(function () {
+            $(".nav-item").removeClass("active");
+            $(".active").parent().addClass("active");
+        });
+        $(window)
+            .scroll(function () {
+                // selectors
+                var $window = $(window),
+                    $body = $("body"),
+                    $panel = $(".panel");
+
+                // Change 33% earlier than scroll position so colour is there when you arrive.
+                var scroll = $window.scrollTop() + $window.height() / 3;
+
+                $panel.each(function () {
+                    var $this = $(this);
+
+                    // if position is within range of this panel.
+                    // So position of (position of top of div <= scroll position) && (position of bottom of div > scroll position).
+                    // Remember we set the scroll to 33% earlier in scroll var.
+                    if (
+                        $this.position().top <= scroll &&
+                        $this.position().top + $this.height() > scroll
+                    ) {
+                        // Remove all classes on body with color-
+                        $body.removeClass(function (index, css) {
+                            return (css.match(/(^|\s)color-\S+/g) || []).join(
+                                " "
+                            );
+                        });
+
+                        // Add class of currently active div
+                        $body.addClass("color-" + $(this).data("color"));
+                    }
+                });
+            })
+            .scroll();
+    </script>
+</html>

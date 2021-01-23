@@ -18,8 +18,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('DJ_SECRET_KEY')
+try:
+    from profilepage.dj_secret_key import secret_key
+    SECRET_KEY = secret_key
+except:
+    # SECURITY WARNING: keep the secret key used in production secret!
+    SECRET_KEY = os.getenv('DJ_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,6 +35,7 @@ ALLOWED_HOSTS = [
                  'www.alifyandra.herokuapp.com',
                  'alifyandra.herokuapp.com',
                  '.alifyandra.herokuapp.com',
+                 'localhost',
                  '127.0.0.1',
                  '172.31.19.100',
                  'django-env.eba-rzmditky.ap-southeast-1.elasticbeanstalk.com',
